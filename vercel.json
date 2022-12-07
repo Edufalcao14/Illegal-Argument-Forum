@@ -1,15 +1,15 @@
-{   
-    " version": 2,
-    "builds":[
-        {
-            "src":"./app.js",
-            "use": "@vercel/node"
-        }
-    ],
+{
+    "name": "deploy-illegal-argument",
+    "Version": 2,
+    "public": true,
+    "build": {
+        "src": "/app.js",
+        "use": "@vercel/node"
+    },
     "routes": [
         {
-          "scr":"/(.*)",
-            "dest": "/"
+            "scr": "/(.*)",
+            "dest": "/app.js"
         }
     ]
 }
