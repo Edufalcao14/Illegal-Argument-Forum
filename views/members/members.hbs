@@ -1,0 +1,49 @@
+{{#if connected}}
+<section class="members-Page-container">
+    <div class="info-members">
+        <h2 class="h2-info-Members-1">Hello</h2>
+        <h2 class="h2-info-Members">{{InfoMembers.prenom}} {{InfoMembers.nom}}</h2>
+        <p class="p-info-Member ">Congratulations !! You have asked a total of {{QuestionsMembers}} questions so far and had {{AnswerMembers}} of your questions answered.</p>
+    </div>
+    <div class="Solved-Not-Questions">
+        <table class="Solved-Not-Questions-Table">
+            <thead>
+                <tr>
+                    <th colspan="2"> <h2>Solved Questions </h2></th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each tableQuestionSolved}}
+                <tr>
+                    <td class="questions-member">
+                        <a href="/questionspage?id={{this.id_question}}">
+                            {{this.titre}}
+                        </a>
+                    </td>
+                </tr>
+                {{/each}}
+            </tbody>
+        </table>
+    </div>
+    <div class="Solved-Not-Questions">
+        <table class="Solved-Not-Questions-Table">
+            <thead>
+                <tr>
+                    <th colspan="2"><h2> Unsolved Questions</h2></th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each tableQuestionNotSolved}}
+                <tr>
+                    <td  class="questions-member">
+                        <a href="/questionspage?id={{this.id_question}}">
+                            {{this.titre}}
+                        </a>
+                    </td>
+                </tr>
+                {{/each}}
+            </tbody>
+        </table>
+    </div>
+</section>
+{{/if}}

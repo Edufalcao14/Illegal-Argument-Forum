@@ -1,0 +1,75 @@
+{{#if admin}}
+<section class="admin-Page-container">
+    <div class="info-admins">
+        <h2 class="h2-info-Members-1">Admin page</h2>
+    </div>
+    <div class="Solved-Not-Questions">
+        <table class="Reported-Questions-Table">
+            <thead>
+                <tr>
+                    <th colspan="2"><h2>Reported Questions</h2></th>
+                </tr>
+                <br>
+            </thead>
+            <tbody>
+                 {{#each tableQuestionReported}}
+                <tr class="ReportedQuestions">
+                    <td class="questions-member">
+                        <a href="/questionspage?id={{this.id_question}}">
+                            {{this.titre}}
+                        </a>
+                    </td>
+                     <td >
+                        <form action="/admin/removeQuestion" method="POST">
+                        <input type="hidden" name="id_question" value={{this.id_question}}>
+                        <input id='SubmitRemove' type="submit" value="Remove">
+                        </form>
+                    </td>
+                    <td>
+                       <form action="/admin/allowQuestion" method="POST">
+                        <input type="hidden" name="id_question" value="{{this.id_question}}">
+                        <input id='allowSubmit' type="submit" value="Allow">
+                        </form> 
+                    </td>
+                </tr>
+                {{/each}}
+            </tbody>
+        </table>
+    </div>
+    <div class="Solved-Not-Questions">
+        <table class="Reported-Answer-Table">
+            <thead>
+                <tr>
+                    <th class="Reported-Answer-Table-h2" colspan="2"><h2 >Reported Answers</h2></th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each TableAnswersReported}}
+                <tr>
+                    <td class="answers-member">
+                        <a href="/questionspage?id={{this.id_question}}">
+                            {{this.description}}
+                        </a>
+                    </td>
+                    <td>
+                        <form action="/admin/removeAnswer" method="POST">
+                        <input type="hidden" name="id_reponse" value="{{this.id_reponse}}">
+                        <input type="hidden" name="id_question" value="{{this.id_question}}">
+                        
+                        <input id='SubmitRemove' type="submit" value="Remove">
+                        </form>
+                    </td>
+                    <td>
+                       <form action="/admin/allowAnswer" method="POST">
+                        <input type="hidden" name="id_reponse" value="{{this.id_reponse}}">
+                        <input type="hidden" name="id_question" value="{{this.id_question}}">
+                        <input id='allowSubmit' type="submit" value="Allow">
+                        </form> 
+                    </td>
+                </tr>
+                {{/each}}
+            </tbody>
+        </table>
+    </div>
+</section>
+{{/if}}

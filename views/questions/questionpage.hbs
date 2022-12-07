@@ -1,0 +1,102 @@
+<section class="question-page-main-Container">
+  <div class="question-info-container">
+    <div class="question-info">
+      <div>
+        <h1> {{showQuestion.titre}} </h1>
+        <p class="description-info-question">{{showQuestion.description}}</p>
+      </div>
+    </div>
+    <div class="subcontainer-info-question">
+      <h6 class="nomCategorie-info-question"> {{showCategorie.nom_categorie}}</h6>
+      <h6 class="date-info-question">{{showQuestion.date_question}}</h6>
+    </div>
+    {{#if connected}}
+    <div class="Report-btn-div">
+      <form method="post" action="/questionspage/reportQuestion">
+        <input type="hidden" value="{{showQuestion.id_question}}" name="id">
+        <input type="submit" value="Report" class="report-btn" name="Reported_Question">
+      </form>
+    </div>
+    {{else}}
+    <div class="Report-btn-div"></div>
+    {{/if}}
+  </div>
+
+</section>
+<section class="answers-page-main-container">
+
+  {{#if questionSolved}}
+  <div class="container-rightAnswer">
+    <h1 class="h1-right-answer">The Right Answer</h1>
+    <div class="subcontainer-rightAnswer">
+        <h2 class="description-rightAnswer">{{showRightAnswerAbove.description}}</h2>
+      <img src="/images/rightAnswer.svg" alt="logo" style="width: 35px ">
+    </div>
+  </div>
+  {{else }}
+  {{#if connected}}
+  <div class="add-answer">
+    <h1> Add an answer here : </h1>
+    <form method="post" action="/questionspage/add">
+      <div class="descriptionInput">
+        <div class="Description-Reponse">
+          <label for="description"> </label>
+        </div>
+        <textarea class="description-textearea" name="description"
+          placeholder="Veuillez mettre minimum 5 caractères."></textarea>
+      </div>
+      <div id='buttonAdd-answer '>
+        <input type="hidden" value="{{showQuestion.id_question}}" name="id_question">
+        <input type="submit" class="buttonAdd-answer " name="rightAnswer">
+      </div>
+    </form>
+  </div>
+  {{/if}}
+  {{/if}}
+</section>
+<section class="container-answers">
+  <div>
+    <h1 class="answers-h1-main">Answers</h1>
+  </div>
+  {{#each showReponses}}
+  <div class="container-answers-QuestionPage">
+    <div class="container-rightAnswer">
+      <p class="answer-description-questionP">{{this.description}}</p>
+    </div>
+    <div class="subcontainer-answers">
+      {{#if ../connected}}
+      {{#if ../ownerQuestion}}
+      <div class="subcontainer-answers">
+        <div class="rightAnswer-btn-div">
+          <form method="post" action="/questionspage/rightAnswer" id="rightAnswer">
+            <input type="hidden" value="{{this.id_reponse}}" name="id_reponse">
+            <input type="hidden" value="{{this.id_question}}" name="id">
+            <input type="submit" value="Right" class="rightAnswer-btn" name="rightAnswer">
+          </form>
+        </div>
+        {{/if}}
+        <div class="Report-btn-div">
+          <form method="post" action="/questionspage/report" id="report">
+            <input type="hidden" value="{{this.id_reponse}}" name="id_reponse">
+            <input type="hidden" value="{{this.id_question}}" name="id">
+            <input type="submit" onclick="alert($dialog.open)" value="report" class="report-btn"
+              name="Reported_reponse">
+          </form>
+        </div>
+      </div>
+      {{/if}}
+    </div>
+  </div>
+  {{/each}}
+   {{#if min1Char}}
+    <div class="modal-window" id="modal-window">
+        <a href="/questionspage?id={{this.id_question}}">
+            <div class="modal">
+                <button class="close-Modal" id="close-Modal"> X</button>
+                <H3 class="modal-text" id="test5">Please enter minimun 3 letters for Title and Minimun 3 for description </H4>
+                  
+            </div>
+        </a>
+    </div>
+    {{/if}}
+</section>

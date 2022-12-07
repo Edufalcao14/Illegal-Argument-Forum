@@ -1,0 +1,38 @@
+<section class="container-form">
+  <div class="second-container-form">
+    <div class="form-login">
+      <form method="POST" action="/users/login">
+        <div class="title">Log In </div>
+        <div class="subtitle">Please enter your login and password !</div>
+        <div class="input-container ic2">
+          <input id="email" class="input" type="text" placeholder=" " name="e_mail" />
+          <div class="cut cut-short"></div>
+          <label for="email" class="placeholder">Email</label>
+        </div>
+        <div class="input-container ic2">
+          <input id="password" class="input" type="password" placeholder=" " name="password" />
+          <div class="cut cut-short"></div>
+          <label for="email" class="placeholder"> Password</label>
+          <div>
+            <p class="msg-form-login">Don't have an account ? <a href="/users/inscription"
+                class="text-white-50 fw-bold">Sign
+                Up</a> </p>
+          </div>
+
+        </div>
+        <button type="text" class="submit">Log In</button>
+      </form>
+    </div>
+  </div>
+  {{#if errors}}
+  <div class="modal-window" id="modal-window">
+    <a href="/users">
+      <div class="modal">
+        <button class="close-Modal" id="close-Modal"> X</button>
+        {{#each errors}}
+        <H3 class="modal-text" id="test5">{{this.msg}} </H4>
+          {{/each}}
+      </div>
+    </a>
+  </div>
+  {{/if}}

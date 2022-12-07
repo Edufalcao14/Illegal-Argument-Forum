@@ -1,0 +1,47 @@
+<header>
+    <div class="container">
+        <nav class="navbar">
+            <div class="nav-logo">
+                <a href="/"> <img src="/images/Logo.svg" alt="logo" class="logo"></a>
+            </div>
+            <ul class="nav-menu">
+                {{#if connected}}
+                <li class="nav-text"><a class="nav-text" href="/"> Home </a></li>
+                <li class="nav-text"><a href='/users/logout'> logout </a></li>
+                <li class="nav-text"><a href="/members">Profile</a></li>
+                {{#if admin}}
+                <li class="nav-text"><a href="/admin">Admin Page</a></li>
+                {{/if}}
+                <div class="search-box">
+                    <div class="search-box-main">
+                        <form action="/questions/searchQuestion" method="get" class="search-box-main">
+                                <input type="text" class="search-text" id="input-search" placeholder="Type to Search..."
+                                    name="titre" minlength="3">
+                                <input type="hidden" value={{this.id_question}} name='id_question'>
+                                <button type="submit" class="button-search-box">
+                                    <img src="/images/loupe.svg" alt="loupe" class="btn-search-box">
+                                </button>
+                        </form>
+                    </div>
+                </div>
+                {{#if min3Char }}
+                <div class="modal-window" id="modal-window">
+                    <a href="/">
+                        <div class="modal">
+                            <button class="close-Modal" id="close-Modal"> X</button>
+                            <H3 class="modal-text" id="test5"> Please enter minimum 3 characters </H4>
+                        </div>
+                    </a>
+                </div>
+                {{/if}}
+    </div>
+    {{else}}
+    <br>
+    <li class="nav"><a href="/"> Home </a></li>
+    <li class="nav"><a href="/users">Log In</a></li>
+    <li class="nav"><a href="/users/inscription"> Sign Up</a></li>
+    {{/if}}
+    </ul>
+    </nav>
+    </div>
+</header>

@@ -1,0 +1,107 @@
+<body class="Site">
+    <section class="Main-container">
+        <section class="First-container">
+            <div class="head-main-page">
+                <h1 class="Head-Main-Page">All Discutions</h1>
+                <div class="links-main-page">
+                    <div class="number-questions">
+                        <p>{{listNumberQuestions}} </p>
+                        <p> Questions </p>
+                    </div>
+                    <div class="links">
+                        <a href="/questions/searchUnaswered"><img src="/images/Unaswered.svg" alt="Unaswered"></a>
+                    </div>
+                    <div class="links">
+                        <a href="/questions/searchNewest"><img src="/images/Newest.svg" alt="Newest"></a>
+                    </div>
+                    <div class="links">
+                        <a href="/questions/searcholdest"> <img src="/images/Oldest.svg" alt="Oldest"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="ask-your-question">
+                {{#if connected}}
+                <div class="Ask-Question-Buttom">
+                    <a href='/questions/createQuestion'>
+                        <button class="buttonCQ"> <h2>Ask your Question </h2 > <img class="img-arrow" src="/images/arrow.svg" alt="arrow"> </button>
+                    </a>
+                </div>
+
+                {{/if }}
+            </div>
+        </section>
+        <section class='Second-container'>
+            <div class="category-container">
+                <div class="most-popular-category">
+                    <h4 class="most-popular-category-h4">Most Popular Categories  </h4>
+                    <div class="most-popular-category-imgs">
+                        <a class="category-icons" href="/questions/searchByCategory?categoriesL=3"><img class="category-icons" src="/images/Java.svg" alt="Java"></a>
+                        <a class="category-icons" href="/questions/searchByCategory?categoriesL=9"><img class="category-icons" src="/images/Node.svg" alt="Node.js"></a>
+                        <a class="category-icons" href="/questions/searchByCategory?categoriesL=1"><img class="category-icons" src="/images/javascript.svg" alt="javascript"></a>
+                        <a class="category-icons" href="/questions/searchByCategory?categoriesL=8"><img class="category-icons" src="/images/SQL.svg" alt="SQL"></a>
+                        <a class="category-icons" href="/questions/searchByCategory?categoriesL=4"><img class="category-icons" src="/images/Python.svg" alt="Python"></a>
+                        <a class="category-icons" href="/questions/searchByCategory?categoriesL=5"><img class="category-icons" src="/images/React.svg" alt="React.js"></a>
+                        <a class="category-icons" href="/questions/searchByCategory?categoriesL=7"><img class="category-icons" src="/images/C.svg" alt="C#"></a>
+                        <a class="category-icons" href="/questions/searchByCategory?categoriesL=6"><img class="category-icons" src="/images/Angular.svg" alt="Angular"></a>
+                    </div>
+                </div>
+                <div class="category-table-main">
+                    <H2 class="all-the-categories">All the Categories</H2>
+                    <ul>
+                        {{#each categoriesTable}}
+                        <li class="category-table-li">
+                            <a class="category-table" href="/questions/searchByCategory?categoriesL={{this.id_categorie}}">
+                                {{this.nom_categorie}}</a>
+                        </li>
+                        {{/each}}
+                    </ul>
+                </div>
+                {{#if connected}}
+                <div class="Join-Community-Buttom">
+                     <a href='/members'>
+                        <button class="buttonJC"> <h2> Go to my Profile </h2><img class="img-arrow" src="/images/arrow.svg" alt="arrow"> </button>
+                    </a>
+                </div>
+                {{else}}
+                <div class="Join-Community-Buttom">
+                     <a href='/users/inscription'>
+                        <button class="buttonJC"> <h2>Join Our Community</h2> <img class="img-arrow" src="/images/arrow.svg" alt="arrow"> </button>
+                    </a>
+                </div>
+                {{/if}}
+            </div>
+            <div class="Question-Container">
+                {{#each questionsTable}}
+                <div class="question">
+                    <a href="/questionspage?id={{this.id_question}}">
+                        <input type="hidden" value={{this.id_question}} name='id_question' id="id_question1">
+                        <div class="Questions-Title">
+                            <h1 class="titreQF"> {{this.titre}}</h1>
+                        </div>
+                        <div class="questions-forum-row">
+                            <div class="Description-Question-Forum">
+                                <p class="Description-Question-Forum" >{{this.description}}</p>
+                            </div>
+                            <div class="Display-Forum-Solved-Date">
+                                <div class="question-solved-Forum">
+                                    {{#if this.solved}}
+                                    <img src="/images/CheckBox.png" alt="check box">
+                                    {{else}}
+                                    <img src="../images/unsolved.png" alt="uncheck box">
+                                    {{/if}}
+                                </div>
+
+                                <div>
+                                    <div class="Question-Date-Forum">
+                                        <h6 class="profile-text">{{Categorie}}</h6>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                {{/each}}
+            </div>
+        </section>
+    </section>
+</body>

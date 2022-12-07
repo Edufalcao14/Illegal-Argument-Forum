@@ -1,0 +1,42 @@
+<section class="container-form">
+  <div class="second-container-form">
+    <div class="form">
+      <form method="POST" action="/users/add">
+        <div class="title">Welcome </div>
+        <div class="subtitle">Let's create your account!</div>
+        <div class="input-container ic1">
+          <input id="firstname" class="input" type="text" placeholder=" " name="prenom" />
+          <div class="cut"></div>
+          <label for="firstname" class="placeholder">First name</label>
+        </div>
+        <div class="input-container ic2">
+          <input id="lastname" class="input" type="text" placeholder=" " name="nom" />
+          <div class="cut"></div>
+          <label for="lastname" class="placeholder">Last name</label>
+        </div>
+        <div class="input-container ic2">
+          <input id="email" class="input" type="text" placeholder=" " name="e_mail" />
+          <div class="cut cut-short"></div>
+          <label for="email" class="placeholder">Email</label>
+        </div>
+        <div class="input-container ic2">
+          <input id="password" class="input" type="password" placeholder=" " name="password" />
+          <div class="cut cut-short"></div>
+          <label for="email" class="placeholder"> Password</label>
+        </div>
+        <button type="text" class="submit">Submit</button>
+      </form>
+    </div>
+  </div>
+  {{#if errors}}
+  <div class="modal-window" id="modal-window">
+    <a href="/users/inscription">
+      <div class="modal">
+        <button class="close-Modal" id="close-Modal"> X</button>
+        {{#each errors}}
+        <H3 class="modal-text" id="test5">{{this.msg}} </H4>
+          {{/each}}
+      </div>
+    </a>
+  </div>
+  {{/if}}
