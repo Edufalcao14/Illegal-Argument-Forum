@@ -80,7 +80,7 @@ And start the project
 ```
 ###
 
-###If you have ideas on how to improve the project or fix any bugs and errors , please contact me via my LinkedIn or Email
+### If you have ideas on how to improve the project or fix any bugs and errors , please contact me via my LinkedIn or Email
 
 ##### My social Medias :
 
