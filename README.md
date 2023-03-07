@@ -10,7 +10,28 @@ In the end I got a grade of 17.5 / 20 as a result of my project.
 <img src="/picsForDocs/MONTAGE.png" alt="PICTURES OF THE PROJECT"/>
 <img src="/picsForDocs/MONTAGE2.png" alt="PICTURES OF THE PROJECT"/>
 
-### Technical Specifications : 
+## Features
+
+As User
+- Ask Question 
+- Reply Questions
+- Login
+- Create Account
+- Mark right answer
+- Report Questions / Anwsers
+
+As Admin
+
+- Remove or accept reported Questions
+- Remove or accept reported Answers
+
+## Tech Stack
+
+**Front-End:** HTML5, CSS , handleBars
+
+**Back-End:** Node, Express
+
+#### Technical Specifications : 
 
 
 | Dependencies | Version  |
@@ -36,12 +57,22 @@ Go to the project folder :
 ```bash
   cd {{path project}}
 ```
-Install the dependencies
+Inse of the project folder :
+Create a new fille named "config.js" and inside cole this :
+```bash
+"module.exports = {
+    secret: "123",
+    dbPath: "{{path to BD}}"
+    // Change the "{{path to BD}}" to the path of the database in your machine.
+};"
+```
+After this install the dependencies
+
 ```bash
   npm install
 ```
 
-Start the project 
+And start the project 
 
 ```bash
   npm start
