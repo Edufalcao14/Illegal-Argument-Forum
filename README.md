@@ -7,4 +7,5 @@ In the end I got a grade of 17.5 / 20 as a result of my project.
 
 ## Some Photos of the Project : 
 
-<img src="/picsForDocs/MONTAGE.png" alt="My cool logo"/>
+<img src="/picsForDocs/MONTAGE.png" alt="PICTURES OF THE PROJECT"/>
+<img src="/picsForDocs/MONTAGE2.png" alt="PICTURES OF THE PROJECT"/>
