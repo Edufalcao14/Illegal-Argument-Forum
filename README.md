@@ -5,5 +5,6 @@ This is an academic project that I developed when I was learning my Web Developm
 This project allowed me to understand better the MVC architecture, also made me understand how worked an integration between back-end - Database and Back-End -- Front-End.
 In the end I got a grade of 17.5 / 20 as a result of my project.
 
+## Some Photos of the Project : 
 
 <img src="/picsForDocs/MONTAGE.png" alt="My cool logo"/>
