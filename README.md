@@ -30,6 +30,8 @@ As Admin
 
 **Back-End:** Node, Express
 
+**DataBase** MySQL
+
 #### Technical Specifications : 
 
 
