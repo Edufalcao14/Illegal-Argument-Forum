@@ -26,11 +26,11 @@ As Admin
 
 ## Tech Stack
 
-**Front-End:** HTML5, CSS , HandleBars
+**Front-End :** HTML5, CSS , HandleBars
 
-**Back-End:** Node, Express
+**Back-End :** Node, Express
 
-**DataBase** MySQL
+**DataBase :** MySQL
 
 #### Technical Specifications : 
 
