@@ -26,7 +26,7 @@ As Admin
 
 ## Tech Stack
 
-**Front-End:** HTML5, CSS , handleBars
+**Front-End:** HTML5, CSS , HandleBars
 
 **Back-End:** Node, Express
 
