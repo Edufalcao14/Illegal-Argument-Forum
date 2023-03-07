@@ -9,3 +9,18 @@ In the end I got a grade of 17.5 / 20 as a result of my project.
 
 <img src="/picsForDocs/MONTAGE.png" alt="PICTURES OF THE PROJECT"/>
 <img src="/picsForDocs/MONTAGE2.png" alt="PICTURES OF THE PROJECT"/>
+
+#### Technical Specifications : 
+
+
+| Dependencies | Version  |
+| :--------    | :------- |
+| `express`            | `~4.16.1`|
+|   `better-sqlite3`   | `^5.0.1` |
+|   `bcrypt`           | `^7.5.0 `|
+| `cookie-parser`      | `^1.4.6` |
+| `express-session`    | `^1.17.2`|
+| `hbs`                | `^1.4.6` |
+| `http-errors `       | `~1.6.3` |
+| `morgan`             | `~1.9.1` |
+| `session`            | `^0.1.0` |
