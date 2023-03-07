@@ -10,7 +10,7 @@ In the end I got a grade of 17.5 / 20 as a result of my project.
 <img src="/picsForDocs/MONTAGE.png" alt="PICTURES OF THE PROJECT"/>
 <img src="/picsForDocs/MONTAGE2.png" alt="PICTURES OF THE PROJECT"/>
 
-#### Technical Specifications : 
+### Technical Specifications : 
 
 
 | Dependencies | Version  |
