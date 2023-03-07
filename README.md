@@ -24,3 +24,25 @@ In the end I got a grade of 17.5 / 20 as a result of my project.
 | `http-errors `       | `~1.6.3` |
 | `morgan`             | `~1.9.1` |
 | `session`            | `^0.1.0` |
+
+
+## Installation
+
+First clone the project on your machine:
+```bash
+  git clone https://github.com/Edufalcao14/Illegal-Argument-Forum.git
+```
+Go to the project folder :
+```bash
+  cd {{path project}}
+```
+Install the dependencies
+```bash
+  npm install
+```
+
+Start the project 
+
+```bash
+  npm start
+```
